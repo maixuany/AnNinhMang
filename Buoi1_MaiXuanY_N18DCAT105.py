@@ -2,9 +2,17 @@ import random
 
 def vietfile():
     infile = open("solieu.txt", 'w')
-    k = int(input("Nhap So Dong La So Nguyen Duong: "))
-    while k<=0:
+    try:
         k = int(input("Nhap So Dong La So Nguyen Duong: "))
+    except:
+        print('So Phan Tu Khong Hop Le')
+        return
+    while k<=0:
+        try:
+            k = int(input("Nhap So Dong La So Nguyen Duong: "))
+        except:
+            print('So Phan Tu Khong Hop Le')
+            return
     array = []
     for i in range(k):
         soLuong = random.randint(1,9)
@@ -17,10 +25,14 @@ def xuli():
     infile = open("solieu.txt",'r').read()
     outfile = open("linetotal.txt",'w')
     array = []
-    for row in infile.split('\n'):
-        parseList = [int(number) for number in row.split(' ')]
-        nSum = sum(parseList)
-        array.append(str(nSum))
+    try:
+        for row in infile.split('\n'):
+            parseList = [int(number) for number in row.split(' ')]
+            nSum = sum(parseList)
+            array.append(str(nSum))
+    except:
+        print('Danh Sach Rong')
+        return
     outfile.write('\n'.join(array))
     outfile.close()
     print("Viet File Thanh Cong")
