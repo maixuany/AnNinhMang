@@ -1,5 +1,3 @@
-import msvcrt
-
 def vietfile():
     infile = open("solieu.txt", 'w')
     k = int(input("Nhap So Dong La So Nguyen Duong: "))
