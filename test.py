@@ -1,1 +1,2 @@
-aa=re.match(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$","1.1.1.1")
+string = 'this is a string'
+print(string[0:3])
