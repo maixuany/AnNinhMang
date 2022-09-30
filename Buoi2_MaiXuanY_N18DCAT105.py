@@ -7,7 +7,7 @@ def findIPinFile():
     for i, text in enumerate(listText, start=1):
         temp+=text
         if(temp.find(ip)!=-1):
-            print(i)
+            print("line: "+str(i))
             temp=''
 
 
